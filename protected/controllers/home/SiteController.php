@@ -191,19 +191,22 @@ class SiteController extends HomeController {
                 Yii::import('application.extensions.phpmailer.JPhpMailer');
                 $mail = new JPhpMailer;
                 //$mail->IsSMTP();
-                $mail->Host = 'smpt.gmail.com';
+                $mail->Host = 'smtp.gmail.com';
                 $mail->Port = 465;
                 $mail->SMTPAuth = true;
-                $mail->Username = 'huynhtuvinh87@gmail.com';
+                $mail->SMTPDebug = 1;
+//                $mail->Host = 'smtp.googlemail.com:465';
+                $mail->SMTPSecure = "ssl";
+                $mail->Username = 'hason61vn@gmail.com';
                 $mail->Password = '';
                 $mail->SetFrom($model->email, $model->name);
                 $mail->Subject = $model->subject;
                 $mail->AltBody = $model->body;
                 $mail->MsgHTML('<h1>' . $model->subject . '</h1><br>' . $model->body);
-                $mail->AddAddress('huynhtuvinh87@gmail.com', 'David Vinh');
+                $mail->AddAddress('hason61vn@gmail.com', 'David Vinh');
                 $mail->Send();
-                CVarDumper::dump($model, 10, true);
-                exit;
+//                CVarDumper::dump($model, 10, true);
+//                exit;
                 Yii::app()->user->setFlash('contact', 'Cảm on khách hàng đã liên hệ với chúng tôi.');
                 $this->refresh();
             }
