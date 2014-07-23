@@ -3,6 +3,8 @@
 class MenuController extends AdminController {
 
 //    public $defaultAction='admin';
+    public $layout = '//layouts/admin_son';
+    public $menuActive = __CLASS__; // lay ten class luon cho menuactive
             public $model, $open_nodes;
 
     public function init() {
@@ -18,7 +20,8 @@ class MenuController extends AdminController {
     }
 
     public function actionAdmin() {
-        $this->layout = 'admin';
+//        $this->layout = 'admin';
+        $this->layout = '//layouts/admin_son';
         $dataProvider = new CActiveDataProvider('Menu');
         $this->render('admin', array('dataProvider' => $dataProvider));
     }

@@ -6,7 +6,9 @@ class ProductController extends AdminController {
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/admin';
+//    public $layout = '//layouts/admin';
+    public $layout = '//layouts/admin_son';
+    public $menuActive = __CLASS__; // lay ten class luon cho menuactive
 
     public function actionAjaxUpdate() {
         $act = $_GET['act'];
@@ -286,6 +288,9 @@ class ProductController extends AdminController {
                 echo '0';
             exit();
         };
+//        $this->render('create', array(
+//            'model' => $model,
+//        ));
     }
 
     /**

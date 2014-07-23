@@ -18,7 +18,7 @@
     <br/>
 
     <b><?php echo CHtml::encode($data->getAttributeLabel('avatar')); ?>:</b>
-    <?php echo CHtml::image(Yii::app()->request->baseUrl . $data->avatar); ?>
+    <?php echo CHtml::image(Yii::app()->request->baseUrl .'/'. $data->avatar); ?>
     <br/>
 
     <b><?php echo CHtml::encode($data->getAttributeLabel('price')); ?>:</b>

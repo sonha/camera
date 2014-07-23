@@ -133,7 +133,7 @@ class Product extends CActiveRecord {
                         'defaultOrder' => 'rank DESC,id DESC'
                     ),
                     'pagination' => array(
-                        'pageSize' => 30,
+                        'pageSize' => 10,
                     ),
                 ));
     }

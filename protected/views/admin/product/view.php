@@ -29,7 +29,7 @@
         'name',
         array(
             'name'  => 'avatar',
-            'value' => Yii::app()->request->baseUrl . $model->avatar,
+            'value' => Yii::app()->request->baseUrl .'/'. $model->avatar,
             'type'  => 'image'
         ),
         'price',
