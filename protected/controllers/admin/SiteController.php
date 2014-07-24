@@ -2,6 +2,8 @@
 
 class SiteController extends AdminController {
 
+    public $layout = '//layouts/admin_son';
+    public $menuActive = __CLASS__; // lay ten class luon cho menuactive
     /**
      * Declares class-based actions.
      */
@@ -47,7 +49,8 @@ class SiteController extends AdminController {
      * Displays the login page
      */
     public function actionLogin() {
-        $this->layout = 'login';
+//        $this->layout = 'login';
+        $this->layout = '//layouts/login_new';
         $model = new LoginForm;
 
         // if it is ajax validation request
@@ -64,7 +67,7 @@ class SiteController extends AdminController {
                 $this->redirect(Yii::app()->user->returnUrl);
         }
         // display the login form
-        $this->render('login', array('model' => $model));
+        $this->render('login_view', array('model' => $model));
     }
 
     /**

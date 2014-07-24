@@ -7,6 +7,7 @@
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'Camera đà nẵng',
+    'homeUrl'=>array('site/login'),
     'language' => 'vi',
     // preloading 'log' component
 //        'preload'    => array('log'),
