@@ -2,7 +2,7 @@
 
 return CMap::mergeArray(
                 require(dirname(__FILE__) . '/main.php'), array(
-            'name' => 'Quản lý sản phẩm',
+            'name' => 'Admin Manager',
             'language' => 'vi',
             'components' => array(
                 // uncomment the following to enable URLs in path-format

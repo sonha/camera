@@ -6,6 +6,13 @@ class AdminController extends CController {
     public $menu = array();
     public $breadcrumbs = array();
 
+    public function init(){
+        Yii::app()->setComponents(array(
+            'errorHandler'=>array(
+                'errorAction'=>'error/errorShow',
+            ),
+        ));
+    }
     public function filters() {
         return array(
             'accessControl',
