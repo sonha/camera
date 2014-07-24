@@ -232,7 +232,7 @@
         <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									<?php echo Yii::app()->user->name;?>
 								</span>
 
         <i class="icon-caret-down"></i>
@@ -247,9 +247,9 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="<?php echo Yii::app()->request->baseUrl;?>/admin.php/user/changePassword">
                 <i class="icon-user"></i>
-                Profile
+                Đổi mật khẩu
             </a>
         </li>
 

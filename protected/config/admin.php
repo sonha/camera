@@ -3,6 +3,7 @@ return CMap::mergeArray(
                 require(dirname(__FILE__) . '/main.php'), array(
             'name' => 'Admin Manager',
             'language' => 'vi',
+//            'defaultController' => 'product',
             'components' => array(
                 // uncomment the following to enable URLs in path-format
 

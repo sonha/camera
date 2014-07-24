@@ -6,7 +6,9 @@ class UserController extends AdminController {
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/admin';
+//    public $layout = '//layouts/admin';
+    public $layout = '//layouts/admin_son';
+    public $menuActive = __CLASS__; // lay ten class luon cho menuactive
 
     public function actionAjaxUpdate() {
         $act = $_GET['act'];
@@ -103,9 +105,10 @@ class UserController extends AdminController {
             if (!empty($user)) {
                 if ($user->email == $_POST['ChangePassword']['email']) {
                     $user->password = $_POST['ChangePassword']['password'];
-                    if ($user->save())
+                    if ($user->save()) {
                         Yii::app()->user->setFlash('user', '<p style="margin-left:100px">Bạn đã thay đổi mật khẩu thành công</p>');
                     $this->refresh();
+                    }
                 }
             }
         }

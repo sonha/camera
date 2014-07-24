@@ -19,7 +19,6 @@
   
     <?php echo Yii::app()->user->getFlash('user'); ?>
 
-
     <?php echo $form->errorSummary($model); ?>
 
     <div class="row">

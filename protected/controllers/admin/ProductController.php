@@ -9,7 +9,7 @@ class ProductController extends AdminController {
 //    public $layout = '//layouts/admin';
     public $layout = '//layouts/admin_son';
     public $menuActive = __CLASS__; // lay ten class luon cho menuactive
-
+//    public $defaultAction = 'admin';
     public function actionAjaxUpdate() {
         $act = $_GET['act'];
         if ($act == 'doSortRank') {
