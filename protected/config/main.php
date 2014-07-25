@@ -15,6 +15,7 @@ return array(
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'application.components.PHPMailer.*',
         'application.extensions.jtogglecolumn.*',
         'application.components.AuthClass.*',
         'application.components.BaseClass.*',
