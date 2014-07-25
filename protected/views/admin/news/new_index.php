@@ -73,7 +73,21 @@
                 'htmlOptions' => array('style' => 'text-align: left'),
             ),
             'pub_time',
-            'user_id',
+//            'user_id',
+            array(
+//                'header' => 'Đây là User ID',
+                'name' => 'user_id',
+                'type' => 'raw',
+                'value' => array($this, 'getUsernameById')
+            ),
+            array(
+//                'header' => 'Thiết bị',
+                'name' => 'status',
+//                'type' => 'raw',
+                'filter' => array('1' => 'Yes', '0' => 'No'),
+//                'value' => array($this, 'getNewsStatus') //'$data->status) ? 'Published' : 'UnPublished'';
+                'value' => '($data->status) ? "Published" : "UnPublished"'
+            ),
             array(
                 'class' => 'CButtonColumn',
                 'header' => CHtml::dropDownList('pageSize', $pageSize, array(10=>10, 20 => 20, 50 => 50, 100 => 100), array(

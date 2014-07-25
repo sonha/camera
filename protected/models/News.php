@@ -11,6 +11,7 @@
  * @property string $thumb
  * @property string $pub_time
  * @property integer $user_id
+ * @property integer $status
  *
  * The followings are the available model relations:
  * @property Category $cat
@@ -74,6 +75,7 @@ class News extends CActiveRecord
 			'thumb' => 'Thumb',
 			'pub_time' => 'Pub Time',
 			'user_id' => 'User',
+			'status' => 'Trạng thái',
 		);
 	}
 
@@ -102,6 +104,7 @@ class News extends CActiveRecord
 		$criteria->compare('thumb',$this->thumb,true);
 		$criteria->compare('pub_time',$this->pub_time,true);
 		$criteria->compare('user_id',$this->user_id);
+		$criteria->compare('status',$this->status);
 
         $sort = new CSort();
         $sort->defaultOrder = 'id DESC';
@@ -110,6 +113,7 @@ class News extends CActiveRecord
             'catid' => 'catid',
             'title' => 'title',
             'user_id' => 'user_id',
+            'status' => 'status',
         );
         $sort->applyOrder($criteria);
         // them thuoc tinh de thuc hien Paging

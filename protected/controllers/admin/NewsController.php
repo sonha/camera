@@ -328,4 +328,38 @@ class NewsController extends AdminController
             Yii::app()->end();
         }
     }
+
+    /**
+     * Ham lay username theo ID
+     * @author : SonHA
+     * @Date : 25/07/2014
+     * @param : $data : the current row data
+     * @param : $row : the row index
+     * $return : $int $totalViews
+     */
+    public function getUsernameById($data, $row)
+    {
+        $user = Yii::app()->db->createCommand()
+            ->select('*')
+            ->from('user')
+            ->where('id = ' . $data->user_id)
+//            ->query();
+            ->queryRow();
+//        var_dump($user);die;
+//            ->queryScalar();
+         return ($user) ? $user['username'] : 'N/A';
+    }
+
+    /**
+     * Ham lay trang thai cua bai viet
+     * @author : SonHA
+     * @Date : 25/07/2014
+     * @param : $data : the current row data
+     * @param : $row : the row index
+     * $return : $int $totalViews
+     */
+    public function getNewsStatus($data, $row)
+    {
+        return ($data->status) ? 'Published' : 'UnPublished';
+    }
 }

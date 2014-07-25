@@ -26,6 +26,7 @@
         <div class="col-md-8">
             <?php
             $listUserName = CHtml::listData(user::model()->findAll(array('order' => 'username')), 'id', 'username'); //table_col_name1 is value of option, table_col_name2 is label of option
+//            var_dump($listUserName);die;
             echo $form->dropDownList($model, 'user_id', $listUserName, array('class' => 'form-control', 'prompt' => 'Chọn user'));
             ?>
         </div>
